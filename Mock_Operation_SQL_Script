@@ -1,0 +1,14 @@
+import com.mysql.jdbc.*
+import groovy.sql.Sql
+
+
+def sql=Sql.newInstance("jdbc:sqlserver://localhost","sa","passwd","com.microsoft.sqlserver.jdbc.SQLServerDriver")
+
+sql.execute("use db_name")
+sql.eachRow("SELECT * FROM table_id")
+{ 
+	row -> def response = row[0]
+     mockOperation.setDefaultResponse(response)
+     log.info("Response -> " + response)
+}
+sql.close()
