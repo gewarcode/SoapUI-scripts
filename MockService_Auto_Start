@@ -1,0 +1,13 @@
+import com.eviware.soapui.model.mock.MockService;
+import com.eviware.soapui.model.mock.MockRunner;
+
+MockService service_id = project.getMockServiceByName( "service_name" );
+
+MockRunner runner 
+try {
+	
+ runner = service_id.start()
+ 
+} catch (Exception e) {
+ runner.cancel( "Could not start service" ) 
+}
